@@ -71,6 +71,7 @@
                     { text: "age", value: "age" },
                     { text: "gender", value: "gender" },
                     { text: "preferences", value: "preferences" },
+                    { text: "photo", value: "photo" },
                 ],
             recommendedProduct : [],
             newValue: {},
@@ -93,6 +94,7 @@
                 'age': '',
                 'gender': '',
                 'preferences': '',
+                'photo': {},
             }
         },
         methods: {

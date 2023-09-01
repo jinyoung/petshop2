@@ -18,6 +18,7 @@
             <div>
                 <String label="Preferences" v-model="item.preferences" :editMode="editMode" @change="change" />
             </div>
+            <Photo offline label="Photo" v-model="item.photo" :editMode="false" @change="change" />
         </v-card-text>
 
         <v-card-actions>

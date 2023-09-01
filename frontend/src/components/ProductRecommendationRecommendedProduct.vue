@@ -21,6 +21,7 @@
             <int offline label="Age" v-model="value.age" :editMode="editMode" @change="change"/>
             <String label="Gender" v-model="value.gender" :editMode="editMode" :inputUI="''"/>
             <String label="Preferences" v-model="value.preferences" :editMode="editMode" :inputUI="''"/>
+            <Photo offline label="Photo" v-model="value.photo" :editMode="editMode" @change="change"/>
         </v-card-text>
 
         <v-card-actions>
@@ -81,10 +82,12 @@
 <script>
     const axios = require('axios').default;
 
+    import Photo from './vo/Photo.vue';
 
     export default {
         name: 'ProductRecommendationRecommendedProduct',
         components:{
+            Photo,
         },
         props: {
             value: [Object, String, Number, Boolean, Array],

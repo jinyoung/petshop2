@@ -40,7 +40,7 @@ mvn spring-boot:run
 ```
 - product-recommendation
 ```
- http :8088/recommendedProducts productType="productType" size="size" age="age" gender="gender" preferences="preferences" 
+ http :8088/recommendedProducts productType="productType" size="size" age="age" gender="gender" preferences="preferences" photo="photo" 
 ```
 - product-purchase
 ```

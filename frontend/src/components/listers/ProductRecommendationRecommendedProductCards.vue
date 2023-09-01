@@ -114,6 +114,7 @@
                 'age': '',
                 'gender': '',
                 'preferences': '',
+                'photo': {},
             }
         },
         methods:{

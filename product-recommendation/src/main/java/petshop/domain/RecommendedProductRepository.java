@@ -18,7 +18,7 @@ public interface RecommendedProductRepository
     @Query(
         value = "select recommendedProduct " +
         "from RecommendedProduct recommendedProduct " +
-        "where(:petProfileId is null or recommendedProduct.petProfileId = :petProfileId)"
+        "where(:petProfileId is null or recommendedProduct.petProfileId like %:petProfileId%)"
     )
     List<RecommendedProduct> findByRecommendationByPetId(
         String petProfileId,

@@ -1,19 +1,20 @@
 package petshop.domain;
 
-import java.time.LocalDate;
-import java.util.*;
-import lombok.*;
 import petshop.domain.*;
 import petshop.infra.AbstractEvent;
+import java.util.*;
+import lombok.*;
+import java.time.LocalDate;
+
 
 //<<< DDD / Domain Event
 @Data
 @ToString
-public class 밤12시 extends AbstractEvent {
+public class 12OClockAtNight extends AbstractEvent {
 
     private Long id;
 
-    public 밤12시() {
+    public 12OClockAtNight(){
         super();
     }
 }

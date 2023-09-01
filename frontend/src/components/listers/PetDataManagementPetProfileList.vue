@@ -52,13 +52,13 @@
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
                             [ Id :  {{data.id }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ PetType :  {{data.petType }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Age :  {{data.age }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Size :  {{data.size }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Gender :  {{data.gender }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Preferences :  {{data.preferences }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Needs :  {{data.needs }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Allegies :  {{data.allegies }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ PetType :  {{data.petType }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -126,13 +126,13 @@
             this.values = temp.data._embedded.petprofiles;
             
             this.newValue = {
-                'petType': '',
                 'age': '',
                 'size': '',
                 'gender': '',
                 'preferences': '',
                 'needs': '',
                 'allegies': [],
+                'petType': '',
             }
         },
         methods: {

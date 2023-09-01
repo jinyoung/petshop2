@@ -15,9 +15,6 @@
                             <v-list-item-title>
                             </v-list-item-title>
                             <v-list-item-subtitle>
-                                PetType :  {{item.petType }}
-                            </v-list-item-subtitle>
-                            <v-list-item-subtitle>
                                 Age :  {{item.age }}
                             </v-list-item-subtitle>
                             <v-list-item-subtitle>
@@ -34,6 +31,9 @@
                             </v-list-item-subtitle>
                             <v-list-item-subtitle>
                                 Allegies :  {{item.allegies }}
+                            </v-list-item-subtitle>
+                            <v-list-item-subtitle>
+                                PetType :  {{item.petType }}
                             </v-list-item-subtitle>
                         </v-list-item-content>
 

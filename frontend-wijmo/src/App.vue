@@ -28,7 +28,7 @@
                 >{{username}} 님</b>
                 <v-btn
                     text
-                    color="mainText"
+                    class="contrast-primary-text"
                     style="font-size:10px"
                     @click="logout()"
                 >Logout

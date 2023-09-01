@@ -7,15 +7,19 @@
     const axios = require('axios').default;
 
     export default{
-        name: 'BaseUIComponent',
+        name: 'BaseUICard',
         data: () => ({
-            path: '/path',
+            path: "",
             repository: null,
+            value: [],
         }),
         created() {
             this.repository = new BaseRepository(axios, this.path)
         },
         methods: {
+            getValue() {
+                this.value = this.repository.find();
+            }
         },
     }
 </script>

@@ -16,7 +16,6 @@
         </v-card-title >        
 
         <v-card-text>
-            <String label="PetType" v-model="value.petType" :editMode="editMode" :inputUI="''"/>
             <int offline label="Age" v-model="value.age" :editMode="editMode" @change="change"/>
             <String label="Size" v-model="value.size" :editMode="editMode" :inputUI="''"/>
             <String label="Gender" v-model="value.gender" :editMode="editMode" :inputUI="''"/>
@@ -24,6 +23,7 @@
             <String label="Needs" v-model="value.needs" :editMode="editMode" :inputUI="''"/>
             <List&lt;Allegy&gt; offline label="Allegies" v-model="value.allegies" :editMode="editMode" @change="change"/>
             <AllegyManager offline label="Allegies" v-model="value.allegies" :editMode="editMode" @change="change"/>
+            <PetType offline label="PetType" v-model="value.petType" :editMode="editMode" @change="change"/>
         </v-card-text>
 
         <v-card-actions>

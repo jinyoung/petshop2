@@ -109,13 +109,13 @@
             me.values = temp.data._embedded.petProfiles;
             
             me.newValue = {
-                'petType': '',
                 'age': '',
                 'size': '',
                 'gender': '',
                 'preferences': '',
                 'needs': '',
                 'allegies': [],
+                'petType': '',
             }
         },
         methods:{

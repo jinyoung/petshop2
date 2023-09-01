@@ -67,13 +67,13 @@
             headers: 
                 [
                     { text: "id", value: "id" },
-                    { text: "petType", value: "petType" },
                     { text: "age", value: "age" },
                     { text: "size", value: "size" },
                     { text: "gender", value: "gender" },
                     { text: "preferences", value: "preferences" },
                     { text: "needs", value: "needs" },
                     { text: "allegies", value: "allegies" },
+                    { text: "petType", value: "petType" },
                 ],
             petProfile : [],
             newValue: {},
@@ -91,13 +91,13 @@
             this.values = temp.data._embedded.petprofiles;
 
             this.newValue = {
-                'petType': '',
                 'age': '',
                 'size': '',
                 'gender': '',
                 'preferences': '',
                 'needs': '',
                 'allegies': [],
+                'petType': '',
             }
         },
         methods: {

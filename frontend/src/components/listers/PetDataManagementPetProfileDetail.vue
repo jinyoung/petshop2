@@ -5,9 +5,6 @@
         </v-card-title>
 
         <v-card-text>
-            <div>
-                <String label="PetType" v-model="item.petType" :editMode="editMode" @change="change" />
-            </div>
             <int offline label="Age" v-model="item.age" :editMode="false" :key="false" @change="change" />
             <div>
                 <String label="Size" v-model="item.size" :editMode="editMode" @change="change" />
@@ -22,6 +19,7 @@
                 <String label="Needs" v-model="item.needs" :editMode="editMode" @change="change" />
             </div>
             <AllegyManager offline label="Allegies" v-model="item.allegies" :editMode="false" @change="change" />
+            <PetType offline label="PetType" v-model="item.petType" :editMode="false" :key="false" @change="change" />
         </v-card-text>
 
         <v-card-actions>

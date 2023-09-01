@@ -17,18 +17,6 @@ const themeColors = {
     warning: '',
     success: '',
 };
-
-const style = document.createElement('style');
-style.type = 'text/css';
-
-Object.keys(themeColors).forEach(key => {
-    const contrastTextColor = readableColor(themeColors[key]);
-    style.innerHTML += `.contrast-${key}-text { color: ${contrastTextColor} !important; }\n`;
-});
-
-document.getElementsByTagName('head')[0].appendChild(style);
-
-
 const defaultColors = {
     surface: '#FFFFFF', // 카드 배경색
     mainText:'#000000', // 메인 글자 색
@@ -48,6 +36,17 @@ Object.keys(themeColors).forEach(key => {
         themeColors[key] = defaultColors[key];
     }
 });
+
+const style = document.createElement('style');
+style.type = 'text/css';
+
+Object.keys(themeColors).forEach(themeColorName => {
+    const contrastTextColor = readableColor(themeColors[themeColorName]);
+    style.innerHTML += `.contrast-${themeColorName}-text { color: ${contrastTextColor} !important; }\n`;
+});
+
+document.getElementsByTagName('head')[0].appendChild(style);
+
 
 export default new Vuetify({
     theme: {

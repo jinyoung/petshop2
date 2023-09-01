@@ -18,8 +18,6 @@ public class PetProfile {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String petType;
-
     private int age;
 
     private String size;
@@ -32,6 +30,8 @@ public class PetProfile {
 
     @ElementCollection
     private List<Allegy> allegies;
+
+    private PetType petType;
 
     @PostPersist
     public void onPostPersist() {

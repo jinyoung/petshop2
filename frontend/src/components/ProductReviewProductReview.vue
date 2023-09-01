@@ -80,12 +80,10 @@
 <script>
     const axios = require('axios').default;
 
-    import Rating from './vo/Rating.vue';
 
     export default {
         name: 'ProductReviewProductReview',
         components:{
-            Rating,
         },
         props: {
             value: [Object, String, Number, Boolean, Array],

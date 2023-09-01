@@ -105,10 +105,10 @@
             <v-container style="padding:0px;" v-else fluid>
                 <div style="width:100%; margin:0px 0px 20px 0px; position: relative;">
                     <v-img style="width:100%; height:300px;"
-                        src=""
+                        src="https://oaidalleapiprodscus.blob.core.windows.net/private/org-IsZwoYj8yobpFySuytSuI26N/user-ha9EUDa76s1yoHT6JzgqOaFI/img-sK9KZSv1AdFmZLSNzPg5PztS.png?st=2023-09-01T01%3A05%3A12Z&se=2023-09-01T03%3A05%3A12Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-09-01T00%3A45%3A34Z&ske=2023-09-02T00%3A45%3A34Z&sks=b&skv=2021-08-06&sig=xuE4J67rg6ZiAsPxq3ZxQvjDnI66r9U8%2BeiHgeNqEcs%3D"
                     ></v-img>
-                    <div class="App-main-text-overlap"></div>
-                    <div class="App-sub-text-overlap"></div>
+                    <div class="App-main-text-overlap">애견 의류 간식 사료등을 애견의 프로필에 따라 자동으로 추천하는 쇼핑몰. 주 사용자는 인스타등 애견을 뽐내고 싶어하는 애견주들.</div>
+                    <div class="App-sub-text-overlap">&quot;지금까지 보지 못한 이용 경험으로 당신의 삶을 편안하게 만들어드립니다. 요구사항을 완벽히 충족시키는 최고의 서비스를 제공합니다. 이제 당신의 기대 이상의 편리함을 경험해보세요. undefined와 함께라면 모든 것이 가능합니다.&quot;</div>
                 </div>
                 <v-row>
                     <v-col cols="4" class="d-flex justify-center" v-for="(aggregate, index) in aggregate" :key="index">
@@ -170,7 +170,7 @@ export default {
         sideBar: true,
         urlPath: null,
         flipped: [],
-        ImageUrl: '',
+        ImageUrl: 'https://oaidalleapiprodscus.blob.core.windows.net/private/org-IsZwoYj8yobpFySuytSuI26N/user-ha9EUDa76s1yoHT6JzgqOaFI/img-sK9KZSv1AdFmZLSNzPg5PztS.png?st=2023-09-01T01%3A05%3A12Z&se=2023-09-01T03%3A05%3A12Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2023-09-01T00%3A45%3A34Z&ske=2023-09-02T00%3A45%3A34Z&sks=b&skv=2021-08-06&sig=xuE4J67rg6ZiAsPxq3ZxQvjDnI66r9U8%2BeiHgeNqEcs%3D',
         aggregate: [
             { 
                 title: '애견 프로필', 

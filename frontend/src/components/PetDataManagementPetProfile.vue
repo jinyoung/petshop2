@@ -22,7 +22,6 @@
             <String label="Gender" v-model="value.gender" :editMode="editMode" :inputUI="''"/>
             <String label="Preferences" v-model="value.preferences" :editMode="editMode" :inputUI="''"/>
             <String label="Needs" v-model="value.needs" :editMode="editMode" :inputUI="''"/>
-            <List&lt;Allegy&gt; offline label="Allegies" v-model="value.allegies" :editMode="editMode" @change="change"/>
             <AllegyManager offline label="Allegies" v-model="value.allegies" :editMode="editMode" @change="change"/>
         </v-card-text>
 

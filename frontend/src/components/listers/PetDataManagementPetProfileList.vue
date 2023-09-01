@@ -47,9 +47,11 @@
                             
                             
                             
+                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
+                            [ Id :  {{data.id }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ PetType :  {{data.petType }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Age :  {{data.age }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Size :  {{data.size }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;

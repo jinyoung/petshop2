@@ -36,11 +36,11 @@ mvn spring-boot:run
 ## Test by API
 - pet-data-management
 ```
- http :8088/petProfiles petType="petType" age="age" size="size" gender="gender" preferences="preferences" needs="needs" allegies="allegies" 
+ http :8088/petProfiles id="id" petType="petType" age="age" size="size" gender="gender" preferences="preferences" needs="needs" allegies="allegies" 
 ```
 - product-recommendation
 ```
- http :8088/recommendedProducts productType="productType" size="size" age="age" gender="gender" preferences="preferences" photo="photo" 
+ http :8088/recommendedProducts productType="productType" size="size" age="age" gender="gender" preferences="preferences" photo="photo" petProfileId="petProfileId" 
 ```
 - product-purchase
 ```

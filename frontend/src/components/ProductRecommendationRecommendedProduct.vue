@@ -22,6 +22,7 @@
             <String label="Gender" v-model="value.gender" :editMode="editMode" :inputUI="''"/>
             <String label="Preferences" v-model="value.preferences" :editMode="editMode" :inputUI="''"/>
             <Photo offline label="Photo" v-model="value.photo" :editMode="editMode" @change="change"/>
+            <PetProfileId offline label="PetProfileId" v-model="value.petProfileId" :editMode="editMode" @change="change"/>
         </v-card-text>
 
         <v-card-actions>

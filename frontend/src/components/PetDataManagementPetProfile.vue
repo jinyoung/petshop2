@@ -16,7 +16,7 @@
         </v-card-title >        
 
         <v-card-text>
-            <String v-if="editMode" label="PetType" v-model="value.petType" :editMode="editMode" :inputUI="''"/>
+            <String label="PetType" v-model="value.petType" :editMode="editMode" :inputUI="''"/>
             <int offline label="Age" v-model="value.age" :editMode="editMode" @change="change"/>
             <String label="Size" v-model="value.size" :editMode="editMode" :inputUI="''"/>
             <String label="Gender" v-model="value.gender" :editMode="editMode" :inputUI="''"/>

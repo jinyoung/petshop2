@@ -115,6 +115,7 @@
                 'gender': '',
                 'preferences': '',
                 'photo': {},
+                'petProfileId': {},
             }
         },
         methods:{

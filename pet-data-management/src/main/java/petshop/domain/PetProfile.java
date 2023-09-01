@@ -15,6 +15,9 @@ import petshop.domain.PetProfileCreated;
 public class PetProfile {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
+
     private String petType;
 
     private int age;

@@ -27,6 +27,9 @@ public class RecommendedProduct {
     @Embedded
     private Photo photo;
 
+    @Embedded
+    private PetProfileId petProfileId;
+
     public static RecommendedProductRepository repository() {
         RecommendedProductRepository recommendedProductRepository = ProductRecommendationApplication.applicationContext.getBean(
             RecommendedProductRepository.class

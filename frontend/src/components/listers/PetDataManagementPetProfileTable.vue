@@ -66,6 +66,7 @@
             values: [],
             headers: 
                 [
+                    { text: "id", value: "id" },
                     { text: "petType", value: "petType" },
                     { text: "age", value: "age" },
                     { text: "size", value: "size" },

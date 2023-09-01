@@ -46,6 +46,7 @@
                             
                             
                             
+                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
@@ -55,6 +56,7 @@
                             [ Gender :  {{data.gender }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Preferences :  {{data.preferences }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Photo :  {{data.photo }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ PetProfileId :  {{data.petProfileId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -128,6 +130,7 @@
                 'gender': '',
                 'preferences': '',
                 'photo': {},
+                'petProfileId': {},
             }
         },
         methods: {

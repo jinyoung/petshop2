@@ -72,6 +72,7 @@
                     { text: "gender", value: "gender" },
                     { text: "preferences", value: "preferences" },
                     { text: "photo", value: "photo" },
+                    { text: "petProfileId", value: "petProfileId" },
                 ],
             recommendedProduct : [],
             newValue: {},
@@ -95,6 +96,7 @@
                 'gender': '',
                 'preferences': '',
                 'photo': {},
+                'petProfileId': {},
             }
         },
         methods: {

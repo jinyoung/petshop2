@@ -11,6 +11,9 @@
 </template>
 
 <script>
+    const axios = require('axios').default;
+
+
     import BaseUIComponent from './base-ui/BaseUIComponent';
     import VueApexCharts from 'vue-apexcharts';
 

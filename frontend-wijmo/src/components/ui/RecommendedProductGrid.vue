@@ -108,7 +108,7 @@
 </template>
 
 <script>
-import RecommendationByPetId from '../RecommendationByPetIdView.vue';
+import RecommendationByPetId from '../RecommendationByPetId.vue';
 import RecommendedProduct from '../RecommendedProduct.vue'
 import BaseGrid from '../base-ui/BaseGrid'
 

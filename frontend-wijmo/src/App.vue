@@ -2,7 +2,7 @@
     <v-app id="inspire">
         <div>
             <Snackbar/>
-            <v-app-bar app clipped-left flat class="contrast-primary-text">
+            <v-app-bar color="primary" app clipped-left flat class="contrast-primary-text">
                 <v-toolbar-title>
                     <v-app-bar-nav-icon class="contrast-primary-text"
                         @click="openSideBar()"
@@ -28,7 +28,7 @@
                 >{{username}} 님</b>
                 <v-btn
                     text
-                    color="mainText"
+                    class="contrast-primary-text"
                     style="font-size:10px"
                     @click="logout()"
                 >Logout

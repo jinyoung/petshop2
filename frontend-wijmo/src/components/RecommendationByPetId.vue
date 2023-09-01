@@ -10,7 +10,7 @@
                     <String class="attributes-list" label="PetProfileId" v-model="value.parameters.petProfileId" :editMode="editMode"/>
                 </v-col>
                 <v-col>
-                    <v-btn class="gs-query-search-btn"
+                    <v-btn class="gs-query-search-btn contrast-primary-text"
                         @click="search"
                         small
                         color="primary"

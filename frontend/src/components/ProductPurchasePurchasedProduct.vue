@@ -19,6 +19,7 @@
             <String v-if="editMode" label="ProductId" v-model="value.productId" :editMode="editMode" :inputUI="''"/>
             <String label="ProductName" v-model="value.productName" :editMode="editMode" :inputUI="''"/>
             <Money offline label="Price" v-model="value.price" :editMode="editMode" @change="change"/>
+            <PetProfileId offline label="PetProfileId" v-model="value.petProfileId" :editMode="editMode" @change="change"/>
         </v-card-text>
 
         <v-card-actions>
@@ -37,7 +38,7 @@
                     text
                     @click="save"
                 >
-                저장
+                    Purchase
                 </v-btn>
                 <v-btn
                     color="primary"

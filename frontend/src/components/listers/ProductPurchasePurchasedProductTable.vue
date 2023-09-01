@@ -69,6 +69,7 @@
                     { text: "productId", value: "productId" },
                     { text: "productName", value: "productName" },
                     { text: "price", value: "price" },
+                    { text: "petProfileId", value: "petProfileId" },
                 ],
             purchasedProduct : [],
             newValue: {},
@@ -89,6 +90,7 @@
                 'productId': '',
                 'productName': '',
                 'price': '',
+                'petProfileId': {},
             }
         },
         methods: {

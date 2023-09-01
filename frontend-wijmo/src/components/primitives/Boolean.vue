@@ -1,12 +1,14 @@
 <template>
     <div>
         <div v-if="editMode" style="margin-top:5px;">
+            <div class="label-title">{{label}}</div>
             <v-switch
                 v-bind="$attrs"
                 v-model="value"
                 hide-details
                 inset
                 @change="change"
+                label="입력하세요."
             >
             </v-switch>
         </div>
@@ -26,6 +28,7 @@
                 default: false
             },
             editMode: Boolean,
+            label: String,
         },
         methods:{
             change(){

@@ -1,11 +1,12 @@
 <template>
     <div>
         <div v-if="editMode">
+            <div class="label-title">{{label}}</div>
             <v-text-field 
                 v-bind="$attrs"
                 v-model="value"
                 @change="change"
-                :label="label"
+                label="입력하세요."
                 outlined
                 single-line
             />
@@ -23,20 +24,18 @@
         props: {
             value:{
                 type: String,
-                default: ''
+                default: null /// TODO '' is not null !
             },
             editMode: Boolean,
             label: String,
         },
         methods:{
             change(){
+                if(this.value==='') this.value = null  //TODO '' is not null
                 this.$emit("input", this.value);
             }
         }
     }
 </script>
 <style>
-.v-text-field--outlined > .v-input__control > .v-input__slot{
-    min-height: 34px !important;
-}
 </style>

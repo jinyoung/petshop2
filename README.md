@@ -44,7 +44,7 @@ mvn spring-boot:run
 ```
 - product-purchase
 ```
- http :8088/purchasedProducts productId="productId" productName="productName" price="price" 
+ http :8088/purchasedProducts productId="productId" productName="productName" price="price" petProfileId="petProfileId" 
 ```
 - social-media-interaction
 ```

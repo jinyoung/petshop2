@@ -13,18 +13,11 @@
 }
 
 .gs-query-search-btn {
-    color:white;
-    background-color:#9A7BCF;
-    border-radius:0;
+    border-radius:5px;
     max-width:100px;
     position: absolute;
     right:10px;
     bottom:10px;
-}
-
-
-.v-text-field--outlined .v-label {
-    top:5px !important;
 }
 
 .dialog-sub-title {
@@ -48,7 +41,6 @@
     font-size:14px;
     font-weight:500;
     width:120px;
-    text-align:right;
     line-height:26px;
     color:black;
     margin-right:5px;
@@ -65,14 +57,25 @@
     --bs-gutter-y:0 !important
 }
 
-/* 모든 텍스트필드 height 값 변경 */
+
+/* 시작 모든 텍스트필드 관련 변경 */
 .theme--light.v-text-field--outlined:not(.v-input--is-focused):not(.v-input--has-state) > .v-input__control > .v-input__slot fieldset {
     height:34px !important;
+}
+
+.v-text-field--outlined > .v-input__control > .v-input__slot{
+    min-height: 34px !important;
 }
 
 .v-text-field.v-text-field--enclosed .v-text-field__details {
     display:none;
 }
+
+
+.v-text-field--outlined .v-label {
+    top:5px !important;
+}
+/* 끝 모든 텍스트필드 관련 변경 */
 
 .detail-title {
     margin-left:15px;
@@ -100,3 +103,57 @@
     padding-left: 15px;
 }
 
+/* 라우터 경로 표시 스타일 */
+.hierarchy {
+    position: absolute;
+    top:15px;
+    left:25px;
+    font-size:18px;
+}
+
+.hierarchy div {
+    display:inline-block;
+}
+
+.hierarchy > div:nth-child(1) {
+    opacity: 0.7;
+}
+
+.save-btn {
+    width:64px;
+}
+
+
+/* 전역 background-color */
+.v-application {
+    background-color:  !important;
+}
+
+/* 오토 모델링으로 생성된 color들을 class를 이용해서 color 색상 적용 */
+/* .surface-color {
+    color: 
+}
+
+.main-text-color {
+    color: 
+}
+
+.secondary-text-color {
+    color: 
+}
+
+.primary-color {
+    color: 
+}
+
+.primary-darken-1-color {
+    color: 
+}
+
+.secondary-color {
+    color: 
+}
+
+.secondary-darken-1-color {
+    color: 
+} */

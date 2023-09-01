@@ -43,12 +43,14 @@
                             
                             
                             
+                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
                             [ ProductId :  {{data.productId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ ProductName :  {{data.productName }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Price :  {{data.price }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ PetProfileId :  {{data.petProfileId }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -119,6 +121,7 @@
                 'productId': '',
                 'productName': '',
                 'price': '',
+                'petProfileId': {},
             }
         },
         methods: {

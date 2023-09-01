@@ -1,74 +1,50 @@
 <template>
     <div>
-        <PetProfilePicker v-model="value" @selected="pick" :editMode="editMode" />
+        <BasePicker v-if="Editable" searchApiPath="petprofiles/search/findBy" searchParameterName=""  idField="id" nameField="" path="petprofiles" label="PetProfileId" v-model="value" @selected="pick" :editMode="editMode" />
+        <div v-else style="height:100%" @click="EditableClick">
+            <span>{{ value && value.name ? value.name : '' }}</span>
+        </div>
     </div>
 
 </template>
 
 <script>
-    export default {
-        name: 'PetProfileId',
-        components:{},
-        props: {
-            value: [Object, String, Number, Boolean, Array],
-            editMode: Boolean,
-            isNew: Boolean,
-            offline: Boolean,
-            inList: Boolean,
-            label: String,
+import BaseEntity from './base-ui/BaseEntity'
+
+export default {
+    name: 'PetProfileId',
+    mixins:[BaseEntity],
+    components:{
+    },
+    data: () => ({
+        path: 'petprofiles',
+    }),
+    props: {
+        Editable: Boolean,
+    },
+    watch: {
+        value(val){
+            this.value = val;
+            this.change();
+            this.Editable = false
         },
-        data: () => ({
-            newValue: {},
-            pickerDialog: false,
-        }),
-        async created() {
-            if(!Object.values(this.value)[0]) {
-                this.$emit('input', {});
-                this.newValue = {
-                    'id': '',
-                }
+    },
+    async created(){
+        if (this.value && this.value.id !== undefined) {
+            this.value = await this.repository.findById(this.value.id)
+        }
+    },
+    methods: {
+        pick(val){
+            this.value = val;
+            this.change();
+        },
+        EditableClick(){
+            if(this.editMode == true) {
+                this.Editable = true
             }
-            else {
-                this.newValue = this.value;
-            }
-        },
-        watch: {
-            value(val) {
-                this.$emit('input', val);
-            },
-            newValue(val) {
-                this.$emit('input', val);
-            },
-        },
-
-        methods: {
-            edit() {
-                this.editMode = true;
-            },
-            async add() {
-                this.editMode = false;
-                this.$emit('input', this.value);
-
-                if(this.isNew){
-                    this.$emit('add', this.value);
-                } else {
-                    this.$emit('edit', this.value);
-                }
-            },
-            async remove(){
-                this.editMode = false;
-                this.isDeleted = true;
-
-                this.$emit('input', this.value);
-                this.$emit('delete', this.value);
-            },
-            change(){
-                this.$emit('change', this.value);
-            },
-            async pick(val){
-                this.newValue = val;
-            },
         }
     }
+}
 </script>
 

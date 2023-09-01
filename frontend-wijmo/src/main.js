@@ -4,7 +4,8 @@ import App from "./App.vue";
 import vuetify from "./plugins/vuetify";
 import Managing from "./components";
 import router from './router';
-import ExcelExportButton from "./grid/export-btn.vue";
+import ExcelExportButton from "./components/base-ui/export-btn.vue";
+import Keycloak from 'keycloak-js';
 Vue.config.productionTip = false;
 Vue.component("excel-export-button", ExcelExportButton);
 Vue.prototype.$Vue = Vue;
@@ -52,8 +53,10 @@ pluralCaseList.push( {plural: "petProfiles", pascal: "PetProfile"} )
 
 pluralCaseList.push( {plural: "recommendedProducts", pascal: "RecommendedProduct"} )
 
+pluralCaseList.push( {plural: "recommendationByPetIds", pascal: "RecommendationByPetId"} )
 pluralCaseList.push( {plural: "purchasedProducts", pascal: "PurchasedProduct"} )
 
+pluralCaseList.push( {plural: "purchaseCounts", pascal: "PurchaseCount"} )
 pluralCaseList.push( {plural: "socialMediaPosts", pascal: "SocialMediaPost"} )
 
 pluralCaseList.push( {plural: "productReviews", pascal: "ProductReview"} )
@@ -71,8 +74,74 @@ Vue.prototype.$ManagerLists.forEach(function(item, idx) {
   })
 })
 
-new Vue({
-  vuetify,
-  router,
-  render: h => h(App)
-}).$mount("#app");
+let initOptions = {
+  url: `http://localhost:9090/`,
+  realm: `master`,
+  clientId: `cliend-name`,
+  onLoad: `login-required`,
+};
+
+
+let keycloak = new Keycloak(initOptions);
+
+init();
+
+function init() {
+  keycloak.init({
+    onLoad: initOptions.onLoad,
+  }).then(auth => {
+    const ONE_MINUTE = 60000;
+  
+    if (!auth) {
+      window.location.reload();
+    } else {
+      console.info(`Auth ok`);
+    }
+
+    Vue.prototype.$OAuth = keycloak
+  
+    new Vue({
+      vuetify,
+      router,
+      render: h => h(App, {
+        props: {
+          OAuth: keycloak,
+        },
+      }),
+    }).$mount("#app");
+  
+    window.setTimeout(refreshToken.bind(null, keycloak), ONE_MINUTE);
+  }).catch(() => {
+    
+    new Vue({
+      vuetify,
+      router,
+      render: h => h(App)
+    }).$mount("#app");
+
+    console.error(`Auth Fail`);
+  })
+}
+
+function refreshToken() {
+  keycloak.updateToken(70).then(refreshed => {
+    if (refreshed) {
+      successRefresh(refreshed);
+    } else {
+      warnRefresh();
+    }
+  }).error(errorRefresh);
+}
+
+function successRefresh(refreshed) {
+  console.debug(`Token refreshed ${refreshed}`);
+}
+
+function warnRefresh() {
+  console.warn(`Token not refreshed, valid for 
+  ${Math.round(keycloak.tokenParsed.exp + keycloak.timeSkew - new Date().getTime() / 1000)} seconds`);
+}
+
+function errorRefresh() {
+  console.error('Failed to refresh token');
+}

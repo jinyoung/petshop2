@@ -1,16 +1,17 @@
 <template>
     <div>
-        <div v-if="editMode" style="margin-top:-20px;">
+        <div v-if="editMode">
+            <div class="label-title">{{label}}</div>
             <v-text-field
                 v-bind="$attrs"
                 type="number"
-                :label="label"
+                label="숫자를 입력하세요."
                 v-model="value"
                 @change="change"
             />
         </div>
         <div v-else>
-            {{label}} :  {{value}}
+            {{value}}
         </div>
     </div>
 </template>
@@ -24,6 +25,7 @@
                 default: 0
             },
             editMode: Boolean,
+            label: String,
         },
         methods:{
             change(){

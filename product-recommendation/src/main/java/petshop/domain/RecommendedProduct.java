@@ -36,5 +36,30 @@ public class RecommendedProduct {
         );
         return recommendedProductRepository;
     }
+
+    //<<< Clean Arch / Port Method
+    public static void recommend(밤12시 밤12시) {
+        //implement business logic here:
+
+        /** Example 1:  new item 
+        RecommendedProduct recommendedProduct = new RecommendedProduct();
+        repository().save(recommendedProduct);
+
+        */
+
+        /** Example 2:  finding and process
+        
+        repository().findById(밤12시.get???()).ifPresent(recommendedProduct->{
+            
+            recommendedProduct // do something
+            repository().save(recommendedProduct);
+
+
+         });
+        */
+
+    }
+    //>>> Clean Arch / Port Method
+
 }
 //>>> DDD / Aggregate Root

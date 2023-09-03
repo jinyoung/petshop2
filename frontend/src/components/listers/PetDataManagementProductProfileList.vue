@@ -1,6 +1,6 @@
 <template>
     <div>
-    <h1>Product</h1>
+    <h1>ProductProfile</h1>
         <v-row>
             <v-card
                 class="mx-auto"
@@ -26,7 +26,7 @@
                         color="primary"
                         style="font-weight:500; font-size:20px; padding:15px; border:solid 2px; max-width:250px; overflow:hidden"
                     >
-                        Product 등록
+                        ProductProfile 등록
                     </v-btn>
                 </v-card-actions>
             </v-card>
@@ -42,15 +42,11 @@
                         <v-list-item-title style="margin-bottom:10px;">
                             
                             
-                            
-                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
-                            [ Name :  {{data.name }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ Price :  {{data.price }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ Description :  {{data.description }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ Ingredients :  {{data.ingredients }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ Id :  {{data.id }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ CausableAllegies :  {{data.causableAllegies }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -70,7 +66,7 @@
                         transition="dialog-bottom-transition"
                 >
 
-                    <ProductProduct :offline="offline" class="video-card" :isNew="true" :editMode="true" v-model="newValue" @add="append" v-if="tick"/>
+                    <PetDataManagementProductProfile :offline="offline" class="video-card" :isNew="true" :editMode="true" v-model="newValue" @add="append" v-if="tick"/>
                 
                     <v-btn
                             style="postition:absolute; top:2%; right:2%"
@@ -89,12 +85,12 @@
 
 <script>
     const axios = require('axios').default;
-    import ProductProduct from './../ProductProduct.vue';
+    import PetDataManagementProductProfile from './../PetDataManagementProductProfile.vue';
 
     export default {
-        name: 'ProductProductManager',
+        name: 'PetDataManagementProductProfileManager',
         components: {
-            ProductProduct,
+            PetDataManagementProductProfile,
         },
         props: {
             offline: Boolean,
@@ -113,15 +109,12 @@
                 return;
             } 
 
-            var temp = await axios.get(axios.fixUrl('/products'))
-            temp.data._embedded.products.map(obj => obj.id=obj._links.self.href.split("/")[obj._links.self.href.split("/").length - 1])
-            this.values = temp.data._embedded.products;
+            var temp = await axios.get(axios.fixUrl('/productprofiles'))
+            temp.data._embedded.productprofiles.map(obj => obj.id=obj._links.self.href.split("/")[obj._links.self.href.split("/").length - 1])
+            this.values = temp.data._embedded.productprofiles;
             
             this.newValue = {
-                'name': '',
-                'price': {},
-                'description': '',
-                'ingredients': [],
+                'causableAllegies': '',
             }
         },
         methods: {

@@ -2,11 +2,11 @@
 
     <div>
         <div class="detail-title">
-        Money
+        Ingredient
         </div>
         <v-col>
-            <Number label="Amount" v-model="value.amount" :editMode="editMode"/>
-            <String label="Currency" v-model="value.currency" :editMode="editMode"/>
+            <String label="이름" v-model="value.name" :editMode="editMode"/>
+            <Number label="양" v-model="value.amount" :editMode="editMode"/>
         </v-col>
 
         <v-card-actions v-if="inList">
@@ -19,12 +19,12 @@
 import BaseEntity from './base-ui/BaseEntity'
 
 export default {
-    name: 'Money',
+    name: 'Ingredient',
     mixins:[BaseEntity],
     components:{
     },
     data: () => ({
-        path: '',
+        path: 'Ingredients',
     }),
     props: {
         Editable: Boolean,

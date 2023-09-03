@@ -23,6 +23,9 @@ public class PolicyHandler {
     @Autowired
     RecommendedProductRepository recommendedProductRepository;
 
+    @Autowired
+    ProductProfileRepository productProfileRepository;
+
     @StreamListener(KafkaProcessor.INPUT)
     public void whatever(@Payload String eventString) {}
 
@@ -107,6 +110,22 @@ public class PolicyHandler {
 
         // Sample Logic //
         RecommendedProduct.recommend(event);
+    }
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='ProductCreated'"
+    )
+    public void wheneverProductCreated_AddProductProfile(
+        @Payload ProductCreated productCreated
+    ) {
+        ProductCreated event = productCreated;
+        System.out.println(
+            "\n\n##### listener AddProductProfile : " + productCreated + "\n\n"
+        );
+
+        // Sample Logic //
+        ProductProfile.addProductProfile(event);
     }
 }
 //>>> Clean Arch / Inbound Adaptor

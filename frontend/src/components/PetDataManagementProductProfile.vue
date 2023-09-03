@@ -9,18 +9,14 @@
         </template>
 
         <v-card-title v-if="value._links">
-            Product # {{decode(value._links.self.href.split("/")[value._links.self.href.split("/").length - 1])}}
+            ProductProfile # {{decode(value._links.self.href.split("/")[value._links.self.href.split("/").length - 1])}}
         </v-card-title >
         <v-card-title v-else>
-            Product
+            ProductProfile
         </v-card-title >        
 
         <v-card-text>
-            <String v-if="editMode" label="상품명" v-model="value.name" :editMode="editMode" :inputUI="'TEXT'"/>
-            <Money offline label="가격" v-model="value.price" :editMode="editMode" @change="change"/>
-            <String label="상세설명" v-model="value.description" :editMode="editMode" :inputUI="'TEXTAREA'"/>
-            <List&lt;Ingredient&gt; offline label="Ingredients" v-model="value.ingredients" :editMode="editMode" @change="change"/>
-            <IngredientManager offline label="Ingredients" v-model="value.ingredients" :editMode="editMode" @change="change"/>
+            <String label="CausableAllegies" v-model="value.causableAllegies" :editMode="editMode" :inputUI="''"/>
         </v-card-text>
 
         <v-card-actions>
@@ -39,14 +35,7 @@
                     text
                     @click="save"
                 >
-                    상품 생성
-                </v-btn>
-                <v-btn
-                    color="primary"
-                    text
-                    @click="save"
-                >
-                    상품 삭제
+                저장
                 </v-btn>
                 <v-btn
                     color="primary"
@@ -68,20 +57,6 @@
         </v-card-actions>
         <v-card-actions>
             <v-spacer></v-spacer>
-            <v-btn
-                v-if="!editMode"
-                color="primary"
-                text
-                @click="openUpdateProduct"
-            >
-                UpdateProduct
-            </v-btn>
-            <v-dialog v-model="updateProductDiagram" width="500">
-                <UpdateProductCommand
-                    @closeDialog="closeUpdateProduct"
-                    @updateProduct="updateProduct"
-                ></UpdateProductCommand>
-            </v-dialog>
         </v-card-actions>
 
         <v-snackbar
@@ -102,12 +77,10 @@
 <script>
     const axios = require('axios').default;
 
-    import Money from './vo/Money.vue';
 
     export default {
-        name: 'ProductProduct',
+        name: 'PetDataManagementProductProfile',
         components:{
-            Money,
         },
         props: {
             value: [Object, String, Number, Boolean, Array],
@@ -121,7 +94,6 @@
                 timeout: 5000,
                 text: '',
             },
-            updateProductDiagram: false,
         }),
 	async created() {
         },
@@ -162,7 +134,7 @@
 
                     if(!this.offline) {
                         if(this.isNew) {
-                            temp = await axios.post(axios.fixUrl('/products'), this.value)
+                            temp = await axios.post(axios.fixUrl('/productProfiles'), this.value)
                         } else {
                             temp = await axios.put(axios.fixUrl(this.value._links.self.href), this.value)
                         }
@@ -218,32 +190,6 @@
             },
             change(){
                 this.$emit('input', this.value);
-            },
-            async updateProduct(params) {
-                try {
-                    if(!this.offline) {
-                        var temp = await axios.put(axios.fixUrl(this.value._links['/products/{id}'].href), params)
-                        for(var k in temp.data) {
-                            this.value[k]=temp.data[k];
-                        }
-                    }
-
-                    this.editMode = false;
-                    this.closeUpdateProduct();
-                } catch(e) {
-                    this.snackbar.status = true
-                    if(e.response && e.response.data.message) {
-                        this.snackbar.text = e.response.data.message
-                    } else {
-                        this.snackbar.text = e
-                    }
-                }
-            },
-            openUpdateProduct() {
-                this.updateProductDiagram = true;
-            },
-            closeUpdateProduct() {
-                this.updateProductDiagram = false;
             },
         },
     }

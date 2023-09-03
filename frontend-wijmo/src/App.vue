@@ -124,6 +124,7 @@ export default {
                 items: [
                     { key: 'petProfiles', url: '/petProfiles', name: '애견 프로필' },
                     { key: 'recommendedProducts', url: '/recommendedProducts', name: '추천 제품' },
+                    { key: 'productProfiles', url: '/productProfiles', name: 'ProductProfile' },
                 ]
             },
             { id: 'productPurchase', title: '상품 구매',
@@ -155,6 +156,10 @@ export default {
             {
                 text: "추천 제품",
                 link: "/recommendedProducts",
+            },
+            {
+                text: "ProductProfile",
+                link: "/productProfiles",
             },
             {
                 text: "구매된 제품",

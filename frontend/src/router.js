@@ -9,6 +9,8 @@ import PetDataManagementPetProfileManager from "./components/listers/PetDataMana
 import PetDataManagementPetProfileDetail from "./components/listers/PetDataManagementPetProfileDetail"
 import PetDataManagementRecommendedProductManager from "./components/listers/PetDataManagementRecommendedProductCards"
 import PetDataManagementRecommendedProductDetail from "./components/listers/PetDataManagementRecommendedProductDetail"
+import PetDataManagementProductProfileManager from "./components/listers/PetDataManagementProductProfileCards"
+import PetDataManagementProductProfileDetail from "./components/listers/PetDataManagementProductProfileDetail"
 
 import ProductPurchasePurchasedProductManager from "./components/listers/ProductPurchasePurchasedProductCards"
 import ProductPurchasePurchasedProductDetail from "./components/listers/ProductPurchasePurchasedProductDetail"
@@ -46,6 +48,16 @@ export default new Router({
                 path: '/petDataManagements/recommendedProducts/:id',
                 name: 'PetDataManagementRecommendedProductDetail',
                 component: PetDataManagementRecommendedProductDetail
+            },
+            {
+                path: '/petDataManagements/productProfiles',
+                name: 'PetDataManagementProductProfileManager',
+                component: PetDataManagementProductProfileManager
+            },
+            {
+                path: '/petDataManagements/productProfiles/:id',
+                name: 'PetDataManagementProductProfileDetail',
+                component: PetDataManagementProductProfileDetail
             },
 
             {

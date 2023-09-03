@@ -7,6 +7,7 @@ Vue.use(Router);
 
 import PetProfileManager from "./components/ui/PetProfileGrid"
 import RecommendedProductManager from "./components/ui/RecommendedProductGrid"
+import ProductProfileManager from "./components/ui/ProductProfileGrid"
 
 import PurchasedProductManager from "./components/ui/PurchasedProductGrid"
 
@@ -31,6 +32,11 @@ export default new Router({
                 path: '/recommendedProducts',
                 name: 'RecommendedProductManager',
                 component: RecommendedProductManager
+            },
+            {
+                path: '/productProfiles',
+                name: 'ProductProfileManager',
+                component: ProductProfileManager
             },
 
             {

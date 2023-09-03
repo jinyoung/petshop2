@@ -18,9 +18,13 @@ public class Product {
     @Id
     private String name;
 
+    @Embedded
     private Money price;
 
     private String description;
+
+    @ElementCollection
+    private List<Ingredient> ingredients;
 
     @PostPersist
     public void onPostPersist() {

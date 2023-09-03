@@ -1,8 +1,6 @@
 <template>
     <div>
-        <String label="상품명" v-model="value.name" :editMode="editMode"/>
-        <String label="상세설명" v-model="value.description" :editMode="editMode"/>
-        <IngredientsDetailGrid label="Ingredients" offline v-model="value.ingredients" :editMode="editMode" @change="change"/>
+        <String label="CausableAllegies" v-model="value.causableAllegies" :editMode="editMode"/>
 
         <v-divider class="border-opacity-100 my-divider"></v-divider>
         <v-layout row justify-end>
@@ -22,13 +20,13 @@
 import BaseEntity from './base-ui/BaseEntity'
 
 export default {
-    name: 'Product',
+    name: 'ProductProfile',
     mixins:[BaseEntity],
     components:{
     },
     
     data: () => ({
-        path: "products"
+        path: "productProfiles"
     }),
     created(){
     },

@@ -1,18 +1,13 @@
 <template>
     <v-card outlined>
         <v-card-title>
-            Product # {{item._links.self.href.split("/")[item._links.self.href.split("/").length - 1]}}
+            ProductProfile # {{item._links.self.href.split("/")[item._links.self.href.split("/").length - 1]}}
         </v-card-title>
 
         <v-card-text>
             <div>
-                <String label="Name" v-model="item.name" :editMode="editMode" @change="change" />
+                <String label="CausableAllegies" v-model="item.causableAllegies" :editMode="editMode" @change="change" />
             </div>
-            <Money offline label="Price" v-model="item.price" :editMode="false" @change="change" />
-            <div>
-                <String label="Description" v-model="item.description" :editMode="editMode" @change="change" />
-            </div>
-            <IngredientManager offline label="Ingredients" v-model="item.ingredients" :editMode="false" @change="change" />
         </v-card-text>
 
         <v-card-actions>
@@ -59,7 +54,7 @@
     const axios = require('axios').default;
 
     export default {
-        name: 'ProductProductDetail',
+        name: 'PetDataManagementProductProfileDetail',
         components:{},
         props: {
         },
@@ -70,7 +65,7 @@
         async created() {
             var me = this;
             var params = this.$route.params;
-            var temp = await axios.get(axios.fixUrl('/products/' + params.id))
+            var temp = await axios.get(axios.fixUrl('/productProfiles/' + params.id))
             if(temp.data) {
                 me.item = temp.data
             }

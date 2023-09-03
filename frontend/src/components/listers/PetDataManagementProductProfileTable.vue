@@ -31,7 +31,7 @@
                         </v-fab-transition>
                     </template>
 
-                    <ProductProduct :offline="offline" class="video-card" :isNew="true" :editMode="true" v-model="newValue" @add="append" v-if="tick"/>
+                    <PetDataManagementProductProfile :offline="offline" class="video-card" :isNew="true" :editMode="true" v-model="newValue" @add="append" v-if="tick"/>
                 
                     <v-btn
                             style="postition:absolute; top:2%; right:2%"
@@ -50,12 +50,12 @@
 
 <script>
     const axios = require('axios').default;
-    import ProductProduct from './../ProductProduct.vue';
+    import PetDataManagementProductProfile from './../PetDataManagementProductProfile.vue';
 
     export default {
-        name: 'ProductProductManager',
+        name: 'PetDataManagementProductProfileManager',
         components: {
-            ProductProduct,
+            PetDataManagementProductProfile,
         },
         props: {
             offline: Boolean,
@@ -66,12 +66,10 @@
             values: [],
             headers: 
                 [
-                    { text: "name", value: "name" },
-                    { text: "price", value: "price" },
-                    { text: "description", value: "description" },
-                    { text: "ingredients", value: "ingredients" },
+                    { text: "id", value: "id" },
+                    { text: "causableAllegies", value: "causableAllegies" },
                 ],
-            product : [],
+            productProfile : [],
             newValue: {},
             tick : true,
             openDialog : false,
@@ -82,15 +80,12 @@
                 return;
             }
 
-            var temp = await axios.get(axios.fixUrl('/products'))
-            temp.data._embedded.products.map(obj => obj.id=obj._links.self.href.split("/")[obj._links.self.href.split("/").length - 1])
-            this.values = temp.data._embedded.products;
+            var temp = await axios.get(axios.fixUrl('/productprofiles'))
+            temp.data._embedded.productprofiles.map(obj => obj.id=obj._links.self.href.split("/")[obj._links.self.href.split("/").length - 1])
+            this.values = temp.data._embedded.productprofiles;
 
             this.newValue = {
-                'name': '',
-                'price': {},
-                'description': '',
-                'ingredients': [],
+                'causableAllegies': '',
             }
         },
         methods: {

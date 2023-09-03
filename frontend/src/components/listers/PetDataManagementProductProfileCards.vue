@@ -12,9 +12,8 @@
                         size="70"
                         class="border-color"
                     >
-                        <span class="material-symbols-outlined" style="font-size:60px; color:#9575CD;">material icon</span>
                     </v-list-item-avatar>
-                    <h1 class="align-self-center ml-3">Product</h1>
+                    <h1 class="align-self-center ml-3">ProductProfile</h1>
                     <div class="secondary-text-color" style="margin-left:30px;"></div>
                 </v-list-item>
             </v-row>
@@ -28,7 +27,7 @@
                         hide-overlay
                         transition="dialog-bottom-transition"
                 >
-                    <ProductProduct :offline="offline" class="video-card" :isNew="true" :editMode="true" v-model="newValue" 
+                    <PetDataManagementProductProfile :offline="offline" class="video-card" :isNew="true" :editMode="true" v-model="newValue" 
                             @add="append" v-if="tick"/>
 
                     <v-btn
@@ -67,7 +66,7 @@
                                 color="primary"
                                 style="font-weight:500; font-size:20px; padding:15px; border:solid 2px; max-width:250px; overflow:hidden"
                             >
-                                Product 등록
+                                ProductProfile 등록
                             </v-btn>
                         </v-card-actions>
                     </v-card>
@@ -75,7 +74,7 @@
             </div>
         </v-col>
         <v-row>
-            <ProductProduct :offline="offline" class="video-card" v-for="(value, index) in values" v-model="values[index]" v-bind:key="index" @delete="remove"/>
+            <PetDataManagementProductProfile :offline="offline" class="video-card" v-for="(value, index) in values" v-model="values[index]" v-bind:key="index" @delete="remove"/>
         </v-row>
     </div>
 </template>
@@ -83,12 +82,12 @@
 <script>
 
     const axios = require('axios').default;
-    import ProductProduct from './../ProductProduct.vue';
+    import PetDataManagementProductProfile from './../PetDataManagementProductProfile.vue';
 
     export default {
-        name: 'ProductProductManager',
+        name: 'PetDataManagementProductProfileManager',
         components: {
-            ProductProduct,
+            PetDataManagementProductProfile,
         },
         props: {
             offline: Boolean
@@ -106,14 +105,11 @@
                 return;
             } 
 
-            var temp = await axios.get(axios.fixUrl('/products'))
-            me.values = temp.data._embedded.products;
+            var temp = await axios.get(axios.fixUrl('/productProfiles'))
+            me.values = temp.data._embedded.productProfiles;
             
             me.newValue = {
-                'name': '',
-                'price': {},
-                'description': '',
-                'ingredients': [],
+                'causableAllegies': '',
             }
         },
         methods:{

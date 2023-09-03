@@ -56,6 +56,17 @@
                         추천 제품
                     </v-list-item>
 
+                    <v-list-item
+                        class="px-2"
+                        key="productProfiles"
+                        to="/petDataManagements/productProfiles"
+                        @click="changeUrl()"
+                        color="primary"
+                        style="font-weight:700;"
+                    >
+                        ProductProfile
+                    </v-list-item>
+
 
                     <v-list-item
                         class="px-2"
@@ -195,6 +206,13 @@ export default {
                 description: '애견의 프로필에 따라 추천되는 제품을 관리하는 집합체입니다.', 
                 key: 'recommendedProducts', 
                 route: '/petDataManagements/recommendedProducts',
+                ImageUrl: '',
+            },
+            { 
+                title: 'ProductProfile', 
+                description: '', 
+                key: 'productProfiles', 
+                route: '/petDataManagements/productProfiles',
                 ImageUrl: '',
             },
             { 

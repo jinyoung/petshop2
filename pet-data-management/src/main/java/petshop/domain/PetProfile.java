@@ -29,13 +29,10 @@ public class PetProfile {
 
     private String needs;
 
-    @ElementCollection
-    private List<Allegy> allegies;
+    @Embedded
+    private Allegy allegies;
 
     private PetType petType;
-
-    @ElementCollection
-    private List<Ingredient> ingredients;
 
     @PostPersist
     public void onPostPersist() {

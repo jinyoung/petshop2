@@ -114,9 +114,8 @@
                 'gender': '',
                 'preferences': '',
                 'needs': '',
-                'allegies': [],
+                'allegies': {},
                 'petType': '',
-                'ingredients': [],
             }
         },
         methods:{

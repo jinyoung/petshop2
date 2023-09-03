@@ -14,5 +14,4 @@ public class PetProfile {
     private String needs;
     private Object allegies;
     private Object petType;
-    private Object ingredients;
 }

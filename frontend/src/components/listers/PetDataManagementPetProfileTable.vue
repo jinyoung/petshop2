@@ -74,7 +74,6 @@
                     { text: "needs", value: "needs" },
                     { text: "allegies", value: "allegies" },
                     { text: "petType", value: "petType" },
-                    { text: "ingredients", value: "ingredients" },
                 ],
             petProfile : [],
             newValue: {},
@@ -97,9 +96,8 @@
                 'gender': '',
                 'preferences': '',
                 'needs': '',
-                'allegies': [],
+                'allegies': {},
                 'petType': '',
-                'ingredients': [],
             }
         },
         methods: {

@@ -21,11 +21,8 @@
             <String label="Gender" v-model="value.gender" :editMode="editMode" :inputUI="''"/>
             <String label="Preferences" v-model="value.preferences" :editMode="editMode" :inputUI="''"/>
             <String label="Needs" v-model="value.needs" :editMode="editMode" :inputUI="''"/>
-            <List&lt;Allegy&gt; offline label="Allegies" v-model="value.allegies" :editMode="editMode" @change="change"/>
-            <AllegyManager offline label="Allegies" v-model="value.allegies" :editMode="editMode" @change="change"/>
+            <Allegy offline label="Allegies" v-model="value.allegies" :editMode="editMode" @change="change"/>
             <PetType offline label="PetType" v-model="value.petType" :editMode="editMode" @change="change"/>
-            <List&lt;Ingredient&gt; offline label="Ingredients" v-model="value.ingredients" :editMode="editMode" @change="change"/>
-            <IngredientManager offline label="Ingredients" v-model="value.ingredients" :editMode="editMode" @change="change"/>
         </v-card-text>
 
         <v-card-actions>

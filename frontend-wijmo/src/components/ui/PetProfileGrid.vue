@@ -37,7 +37,7 @@
             style="margin-top:10px; max-height:65vh;"
             class="wj-felx-grid"
         >
-            <wj-flex-grid-filter :filterColumns="['RowHeader','age','size','gender','preferences','needs','allegies','petType','ingredients',]" />
+            <wj-flex-grid-filter :filterColumns="['RowHeader','age','size','gender','preferences','needs','allegies','petType',]" />
             <wj-flex-grid-cell-template cellType="RowHeader" v-slot="cell">{{cell.row.index + 1}}</wj-flex-grid-cell-template>
             <wj-flex-grid-column binding="age" header="Age" width="2*" :isReadOnly="true" align="center" />
             <wj-flex-grid-column binding="size" header="Size" width="2*" :isReadOnly="true" align="center" />
@@ -46,7 +46,6 @@
             <wj-flex-grid-column binding="needs" header="Needs" width="2*" :isReadOnly="true" align="center" />
             <wj-flex-grid-column binding="petType" header="PetType" width="2*" :isReadOnly="true" align="center" />
         </wj-flex-grid>
-        <IngredientsDetailGrid label="Ingredients" offline v-if="selectedRow" v-model="selectedRow.ingredients"/>
         <v-col>
             <v-dialog
                 v-model="openDialog"
@@ -130,9 +129,8 @@ export default {
                         'gender': '',
                         'preferences': '',
                         'needs': '',
-                        'allegies': [],
+                        'allegies': {},
                         'petType': {},
-                        'ingredients': [],
                     }
                 }
             }

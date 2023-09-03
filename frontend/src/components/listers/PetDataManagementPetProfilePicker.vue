@@ -35,9 +35,6 @@
                             <v-list-item-subtitle>
                                 PetType :  {{item.petType }}
                             </v-list-item-subtitle>
-                            <v-list-item-subtitle>
-                                Ingredients :  {{item.ingredients }}
-                            </v-list-item-subtitle>
                         </v-list-item-content>
 
                         <v-list-item-action>
@@ -89,8 +86,6 @@
                 if(val != undefined) {
                     var arr = this.list[val]._links.self.href.split('/');
                     obj['id'] = arr[4]; 
-                    
-                    
                     
                     
                     

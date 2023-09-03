@@ -5,8 +5,8 @@
         <String label="Preferences" v-model="value.preferences" :editMode="editMode"/>
         <String label="Needs" v-model="value.needs" :editMode="editMode"/>
         <int offline label="Age" v-model="value.age" :editMode="editMode" @change="change"/>
+        <Allegy offline label="Allegies" v-model="value.allegies" :editMode="editMode" @change="change"/>
         <PetType offline label="PetType" v-model="value.petType" :editMode="editMode" @change="change"/>
-        <IngredientsDetailGrid label="Ingredients" offline v-model="value.ingredients" :editMode="editMode" @change="change"/>
 
         <v-divider class="border-opacity-100 my-divider"></v-divider>
         <v-layout row justify-end>

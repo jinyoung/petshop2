@@ -18,9 +18,8 @@
             <div>
                 <String label="Needs" v-model="item.needs" :editMode="editMode" @change="change" />
             </div>
-            <AllegyManager offline label="Allegies" v-model="item.allegies" :editMode="false" @change="change" />
+            <Allegy offline label="Allegies" v-model="item.allegies" :editMode="false" :key="false" @change="change" />
             <PetType offline label="PetType" v-model="item.petType" :editMode="false" :key="false" @change="change" />
-            <IngredientManager offline label="Ingredients" v-model="item.ingredients" :editMode="false" @change="change" />
         </v-card-text>
 
         <v-card-actions>

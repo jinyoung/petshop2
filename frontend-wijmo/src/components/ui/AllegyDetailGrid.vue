@@ -19,6 +19,7 @@
             style="margin-top:10px; max-height:65vh;"
         >
             <wj-flex-grid-cell-template cellType="RowHeader" v-slot="cell">{{cell.row.index + 1}}</wj-flex-grid-cell-template>
+            <wj-flex-grid-column binding="name" header="Name" width="2*" :isReadOnly="!editMode" align="center"/>
         </wj-flex-grid>
     </div>
 </template>

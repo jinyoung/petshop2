@@ -18,6 +18,9 @@ public class Allegy {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private String name;
+
     public Boolean isCausable() {}
 }
 //>>> DDD / Value Object

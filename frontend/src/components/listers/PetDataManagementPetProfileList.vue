@@ -48,6 +48,7 @@
                             
                             
                             
+                            
                         </v-list-item-title>
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
@@ -59,6 +60,7 @@
                             [ Needs :  {{data.needs }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ Allegies :  {{data.allegies }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                             [ PetType :  {{data.petType }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ Ingredients :  {{data.ingredients }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -133,6 +135,7 @@
                 'needs': '',
                 'allegies': [],
                 'petType': '',
+                'ingredients': [],
             }
         },
         methods: {

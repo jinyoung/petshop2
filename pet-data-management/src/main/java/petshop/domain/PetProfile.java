@@ -34,6 +34,9 @@ public class PetProfile {
 
     private PetType petType;
 
+    @ElementCollection
+    private List<Ingredient> ingredients;
+
     @PostPersist
     public void onPostPersist() {
         PetProfileCreated petProfileCreated = new PetProfileCreated(this);

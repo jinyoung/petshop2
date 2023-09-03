@@ -116,6 +116,7 @@
                 'needs': '',
                 'allegies': [],
                 'petType': '',
+                'ingredients': [],
             }
         },
         methods:{

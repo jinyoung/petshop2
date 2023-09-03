@@ -10,6 +10,7 @@ import petshop.infra.AbstractEvent;
 public class ProductCreated extends AbstractEvent {
 
     private String name;
-    private Object price;
     private String description;
+    private Object ingredients;
+    private Object price;
 }

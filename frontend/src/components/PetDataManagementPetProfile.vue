@@ -24,6 +24,8 @@
             <List&lt;Allegy&gt; offline label="Allegies" v-model="value.allegies" :editMode="editMode" @change="change"/>
             <AllegyManager offline label="Allegies" v-model="value.allegies" :editMode="editMode" @change="change"/>
             <PetType offline label="PetType" v-model="value.petType" :editMode="editMode" @change="change"/>
+            <List&lt;Ingredient&gt; offline label="Ingredients" v-model="value.ingredients" :editMode="editMode" @change="change"/>
+            <IngredientManager offline label="Ingredients" v-model="value.ingredients" :editMode="editMode" @change="change"/>
         </v-card-text>
 
         <v-card-actions>

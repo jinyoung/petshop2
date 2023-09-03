@@ -5,8 +5,6 @@
         Allegy
         </div>
         <v-col>
-            <String label="Name" v-model="value.name" :editMode="editMode"/>
-            <String label="Code" v-model="value.code" :editMode="editMode"/>
         </v-col>
 
         <v-card-actions v-if="inList">

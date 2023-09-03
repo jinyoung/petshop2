@@ -15,8 +15,9 @@ import org.springframework.beans.BeanUtils;
 @NoArgsConstructor
 public class Allegy {
 
-    private String name;
+    @GeneratedValue(strategy = GenerationType.AUTO)
+    private Long id;
 
-    private String code;
+    public Boolean isCausable() {}
 }
 //>>> DDD / Value Object

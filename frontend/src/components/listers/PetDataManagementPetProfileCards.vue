@@ -114,7 +114,7 @@
                 'gender': '',
                 'preferences': '',
                 'needs': '',
-                'allegies': {},
+                'allegies': [],
                 'petType': '',
             }
         },

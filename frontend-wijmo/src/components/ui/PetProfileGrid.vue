@@ -46,6 +46,7 @@
             <wj-flex-grid-column binding="needs" header="Needs" width="2*" :isReadOnly="true" align="center" />
             <wj-flex-grid-column binding="petType" header="PetType" width="2*" :isReadOnly="true" align="center" />
         </wj-flex-grid>
+        <AllegiesDetailGrid label="Allegies" offline v-if="selectedRow" v-model="selectedRow.allegies"/>
         <v-col>
             <v-dialog
                 v-model="openDialog"
@@ -129,7 +130,7 @@ export default {
                         'gender': '',
                         'preferences': '',
                         'needs': '',
-                        'allegies': {},
+                        'allegies': [],
                         'petType': {},
                     }
                 }

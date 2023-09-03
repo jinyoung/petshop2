@@ -29,8 +29,8 @@ public class PetProfile {
 
     private String needs;
 
-    @Embedded
-    private Allegy allegies;
+    @ElementCollection
+    private List<Allegy> allegies;
 
     private PetType petType;
 

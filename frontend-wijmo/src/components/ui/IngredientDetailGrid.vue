@@ -19,8 +19,8 @@
             style="margin-top:10px; max-height:65vh;"
         >
             <wj-flex-grid-cell-template cellType="RowHeader" v-slot="cell">{{cell.row.index + 1}}</wj-flex-grid-cell-template>
-            <wj-flex-grid-column binding="name" header="이름" width="2*" :isReadOnly="!editMode" align="center"/>
-            <wj-flex-grid-column binding="amount" header="양" width="2*" :isReadOnly="true" align="center">
+            <wj-flex-grid-column binding="name" header="Name" width="2*" :isReadOnly="!editMode" align="center"/>
+            <wj-flex-grid-column binding="amount" header="Amount" width="2*" :isReadOnly="true" align="center">
                 <wj-flex-grid-cell-template cellType="Cell" v-slot="cell">
                     <Number v-model="cell.item.amount" :editMode="editMode"/>
                 </wj-flex-grid-cell-template>

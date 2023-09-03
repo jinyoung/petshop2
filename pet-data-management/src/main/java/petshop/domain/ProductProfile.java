@@ -17,7 +17,8 @@ public class ProductProfile {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
 
-    private String causableAllegies;
+    @ElementCollection
+    private List<Ingredient> ingredients;
 
     public static ProductProfileRepository repository() {
         ProductProfileRepository productProfileRepository = PetDataManagementApplication.applicationContext.getBean(

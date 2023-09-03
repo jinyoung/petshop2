@@ -5,9 +5,7 @@
         </v-card-title>
 
         <v-card-text>
-            <div>
-                <String label="CausableAllegies" v-model="item.causableAllegies" :editMode="editMode" @change="change" />
-            </div>
+            <IngredientManager offline label="Ingredients" v-model="item.ingredients" :editMode="false" @change="change" />
         </v-card-text>
 
         <v-card-actions>

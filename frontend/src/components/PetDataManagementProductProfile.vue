@@ -16,7 +16,8 @@
         </v-card-title >        
 
         <v-card-text>
-            <String label="CausableAllegies" v-model="value.causableAllegies" :editMode="editMode" :inputUI="''"/>
+            <List&lt;Ingredient&gt; offline label="Ingredients" v-model="value.ingredients" :editMode="editMode" @change="change"/>
+            <IngredientManager offline label="Ingredients" v-model="value.ingredients" :editMode="editMode" @change="change"/>
         </v-card-text>
 
         <v-card-actions>

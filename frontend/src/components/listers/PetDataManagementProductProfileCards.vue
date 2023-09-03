@@ -109,7 +109,7 @@
             me.values = temp.data._embedded.productProfiles;
             
             me.newValue = {
-                'causableAllegies': '',
+                'ingredients': [],
             }
         },
         methods:{

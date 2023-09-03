@@ -15,7 +15,7 @@
                             <v-list-item-title>
                             </v-list-item-title>
                             <v-list-item-subtitle>
-                                CausableAllegies :  {{item.causableAllegies }}
+                                Ingredients :  {{item.ingredients }}
                             </v-list-item-subtitle>
                         </v-list-item-content>
 

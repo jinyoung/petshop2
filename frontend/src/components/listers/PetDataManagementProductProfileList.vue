@@ -46,7 +46,7 @@
 
                         <v-list-item-subtitle style="font-size:25px; font-weight:700;">
                             [ Id :  {{data.id }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-                            [ CausableAllegies :  {{data.causableAllegies }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                            [ Ingredients :  {{data.ingredients }} ] &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                         </v-list-item-subtitle>
 
                     </v-list-item-content>
@@ -114,7 +114,7 @@
             this.values = temp.data._embedded.productprofiles;
             
             this.newValue = {
-                'causableAllegies': '',
+                'ingredients': [],
             }
         },
         methods: {

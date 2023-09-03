@@ -67,7 +67,7 @@
             headers: 
                 [
                     { text: "id", value: "id" },
-                    { text: "causableAllegies", value: "causableAllegies" },
+                    { text: "ingredients", value: "ingredients" },
                 ],
             productProfile : [],
             newValue: {},
@@ -85,7 +85,7 @@
             this.values = temp.data._embedded.productprofiles;
 
             this.newValue = {
-                'causableAllegies': '',
+                'ingredients': [],
             }
         },
         methods: {

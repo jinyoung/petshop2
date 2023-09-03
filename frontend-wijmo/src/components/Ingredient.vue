@@ -5,8 +5,8 @@
         Ingredient
         </div>
         <v-col>
-            <String label="이름" v-model="value.name" :editMode="editMode"/>
-            <Number label="양" v-model="value.amount" :editMode="editMode"/>
+            <String label="Name" v-model="value.name" :editMode="editMode"/>
+            <Number label="Amount" v-model="value.amount" :editMode="editMode"/>
         </v-col>
 
         <v-card-actions v-if="inList">

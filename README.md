@@ -38,7 +38,7 @@ mvn spring-boot:run
 ```
  http :8088/petProfiles id="id" age="age" size="size" gender="gender" preferences="preferences" needs="needs" allegies="allegies" petType="petType" 
  http :8088/recommendedProducts productType="productType" size="size" age="age" gender="gender" preferences="preferences" photo="photo" petProfileId="petProfileId" 
- http :8088/productProfiles id="id" causableAllegies="causableAllegies" 
+ http :8088/productProfiles id="id" ingredients="ingredients" 
 ```
 - product-purchase
 ```

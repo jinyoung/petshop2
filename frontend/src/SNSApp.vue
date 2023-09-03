@@ -45,11 +45,10 @@
                         애견 프로필
                     </v-list-item>
 
-
                     <v-list-item
                         class="px-2"
                         key="recommendedProducts"
-                        to="/productRecommendations/recommendedProducts"
+                        to="/petDataManagements/recommendedProducts"
                         @click="changeUrl()"
                         color="primary"
                         style="font-weight:700;"
@@ -91,6 +90,18 @@
                         style="font-weight:700;"
                     >
                         제품 후기
+                    </v-list-item>
+
+
+                    <v-list-item
+                        class="px-2"
+                        key="products"
+                        to="/products/products"
+                        @click="changeUrl()"
+                        color="primary"
+                        style="font-weight:700;"
+                    >
+                        Product
                     </v-list-item>
 
 
@@ -183,7 +194,7 @@ export default {
                 title: '추천 제품', 
                 description: '애견의 프로필에 따라 추천되는 제품을 관리하는 집합체입니다.', 
                 key: 'recommendedProducts', 
-                route: '/productRecommendations/recommendedProducts',
+                route: '/petDataManagements/recommendedProducts',
                 ImageUrl: '',
             },
             { 
@@ -205,6 +216,13 @@ export default {
                 description: '애견주의 제품 후기 및 평가를 관리하는 집합체입니다.', 
                 key: 'productReviews', 
                 route: '/productReviews/productReviews',
+                ImageUrl: '',
+            },
+            { 
+                title: 'Product', 
+                description: '', 
+                key: 'products', 
+                route: '/products/products',
                 ImageUrl: '',
             },
             

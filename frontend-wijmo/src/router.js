@@ -6,7 +6,6 @@ Vue.use(Router);
 
 
 import PetProfileManager from "./components/ui/PetProfileGrid"
-
 import RecommendedProductManager from "./components/ui/RecommendedProductGrid"
 
 import PurchasedProductManager from "./components/ui/PurchasedProductGrid"
@@ -15,6 +14,8 @@ import PurchaseCountView from "./components/PurchaseCountView"
 import SocialMediaPostManager from "./components/ui/SocialMediaPostGrid"
 
 import ProductReviewManager from "./components/ui/ProductReviewGrid"
+
+import ProductManager from "./components/ui/ProductGrid"
 
 
 export default new Router({
@@ -26,7 +27,6 @@ export default new Router({
                 name: 'PetProfileManager',
                 component: PetProfileManager
             },
-
             {
                 path: '/recommendedProducts',
                 name: 'RecommendedProductManager',
@@ -55,6 +55,12 @@ export default new Router({
                 path: '/productReviews',
                 name: 'ProductReviewManager',
                 component: ProductReviewManager
+            },
+
+            {
+                path: '/products',
+                name: 'ProductManager',
+                component: ProductManager
             },
 
 

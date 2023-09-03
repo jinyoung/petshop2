@@ -37,20 +37,6 @@ services:
       - ./pet-data-management:/usr/src
       - ./maven-repo:/root/.m2
       
-  product-recommendation:
-    depends_on: 
-      - kafka
-    image: adoptopenjdk/maven-openjdk11:latest
-    environment:
-      - SPRING_PROFILES_ACTIVE=docker
-    command: mvn spring-boot:run
-    ports:
-      - 8083:8083
-    working_dir: /usr/src
-    volumes:
-      - ./product-recommendation:/usr/src
-      - ./maven-repo:/root/.m2
-      
   product-purchase:
     depends_on: 
       - kafka
@@ -59,7 +45,7 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
     command: mvn spring-boot:run
     ports:
-      - 8084:8084
+      - 8083:8083
     working_dir: /usr/src
     volumes:
       - ./product-purchase:/usr/src
@@ -73,7 +59,7 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
     command: mvn spring-boot:run
     ports:
-      - 8085:8085
+      - 8084:8084
     working_dir: /usr/src
     volumes:
       - ./social-media-interaction:/usr/src
@@ -87,9 +73,23 @@ services:
       - SPRING_PROFILES_ACTIVE=docker
     command: mvn spring-boot:run
     ports:
-      - 8086:8086
+      - 8085:8085
     working_dir: /usr/src
     volumes:
       - ./product-review:/usr/src
+      - ./maven-repo:/root/.m2
+      
+  product:
+    depends_on: 
+      - kafka
+    image: adoptopenjdk/maven-openjdk11:latest
+    environment:
+      - SPRING_PROFILES_ACTIVE=docker
+    command: mvn spring-boot:run
+    ports:
+      - 8086:8086
+    working_dir: /usr/src
+    volumes:
+      - ./product:/usr/src
       - ./maven-repo:/root/.m2
       

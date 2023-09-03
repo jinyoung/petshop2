@@ -43,46 +43,6 @@ spec:
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: product-recommendation
-  labels:
-    app: product-recommendation
-spec:
-  replicas: 1
-  selector:
-    matchLabels:
-      app: product-recommendation
-  template:
-    metadata:
-      labels:
-        app: product-recommendation
-    spec:
-      containers:
-        - name: product-recommendation
-          image: username/product-recommendation:latest
-          ports:
-            - containerPort: 8080
-          readinessProbe:
-            httpGet:
-              path: '/actuator/health'
-              port: 8080
-            initialDelaySeconds: 10
-            timeoutSeconds: 2
-            periodSeconds: 5
-            failureThreshold: 10
-          livenessProbe:
-            httpGet:
-              path: '/actuator/health'
-              port: 8080
-            initialDelaySeconds: 120
-            timeoutSeconds: 2
-            periodSeconds: 5
-            failureThreshold: 5
-
----
-
-apiVersion: apps/v1
-kind: Deployment
-metadata:
   name: product-purchase
   labels:
     app: product-purchase
@@ -198,6 +158,46 @@ spec:
             periodSeconds: 5
             failureThreshold: 5
 
+---
+
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: product
+  labels:
+    app: product
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: product
+  template:
+    metadata:
+      labels:
+        app: product
+    spec:
+      containers:
+        - name: product
+          image: username/product:latest
+          ports:
+            - containerPort: 8080
+          readinessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 10
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 10
+          livenessProbe:
+            httpGet:
+              path: '/actuator/health'
+              port: 8080
+            initialDelaySeconds: 120
+            timeoutSeconds: 2
+            periodSeconds: 5
+            failureThreshold: 5
+
 
 ---
 
@@ -214,23 +214,6 @@ spec:
       targetPort: 8080
   selector:
     app: pet-data-management
-
-
----
-
-
-apiVersion: v1
-kind: Service
-metadata:
-  name: product-recommendation
-  labels:
-    app: product-recommendation
-spec:
-  ports:
-    - port: 8080
-      targetPort: 8080
-  selector:
-    app: product-recommendation
 
 
 ---
@@ -282,4 +265,21 @@ spec:
       targetPort: 8080
   selector:
     app: product-review
+
+
+---
+
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: product
+  labels:
+    app: product
+spec:
+  ports:
+    - port: 8080
+      targetPort: 8080
+  selector:
+    app: product
 

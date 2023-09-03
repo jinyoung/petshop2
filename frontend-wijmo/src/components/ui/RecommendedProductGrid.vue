@@ -1,7 +1,7 @@
 <template>
     <div style="max-height:80vh;">
         <div class="hierarchy">
-            <div>제품 추천 &nbsp; ></div>
+            <div>애견 데이터 관리 &nbsp; ></div>
             <div>&nbsp; 추천 제품</div>
         </div>
         <div class="gs-bundle-of-buttons" style="max-height:10vh;">

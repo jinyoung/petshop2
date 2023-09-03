@@ -7,9 +7,8 @@ Vue.use(Router);
 
 import PetDataManagementPetProfileManager from "./components/listers/PetDataManagementPetProfileCards"
 import PetDataManagementPetProfileDetail from "./components/listers/PetDataManagementPetProfileDetail"
-
-import ProductRecommendationRecommendedProductManager from "./components/listers/ProductRecommendationRecommendedProductCards"
-import ProductRecommendationRecommendedProductDetail from "./components/listers/ProductRecommendationRecommendedProductDetail"
+import PetDataManagementRecommendedProductManager from "./components/listers/PetDataManagementRecommendedProductCards"
+import PetDataManagementRecommendedProductDetail from "./components/listers/PetDataManagementRecommendedProductDetail"
 
 import ProductPurchasePurchasedProductManager from "./components/listers/ProductPurchasePurchasedProductCards"
 import ProductPurchasePurchasedProductDetail from "./components/listers/ProductPurchasePurchasedProductDetail"
@@ -19,6 +18,9 @@ import SocialMediaInteractionSocialMediaPostDetail from "./components/listers/So
 
 import ProductReviewProductReviewManager from "./components/listers/ProductReviewProductReviewCards"
 import ProductReviewProductReviewDetail from "./components/listers/ProductReviewProductReviewDetail"
+
+import ProductProductManager from "./components/listers/ProductProductCards"
+import ProductProductDetail from "./components/listers/ProductProductDetail"
 
 
 export default new Router({
@@ -35,16 +37,15 @@ export default new Router({
                 name: 'PetDataManagementPetProfileDetail',
                 component: PetDataManagementPetProfileDetail
             },
-
             {
-                path: '/productRecommendations/recommendedProducts',
-                name: 'ProductRecommendationRecommendedProductManager',
-                component: ProductRecommendationRecommendedProductManager
+                path: '/petDataManagements/recommendedProducts',
+                name: 'PetDataManagementRecommendedProductManager',
+                component: PetDataManagementRecommendedProductManager
             },
             {
-                path: '/productRecommendations/recommendedProducts/:id',
-                name: 'ProductRecommendationRecommendedProductDetail',
-                component: ProductRecommendationRecommendedProductDetail
+                path: '/petDataManagements/recommendedProducts/:id',
+                name: 'PetDataManagementRecommendedProductDetail',
+                component: PetDataManagementRecommendedProductDetail
             },
 
             {
@@ -78,6 +79,17 @@ export default new Router({
                 path: '/productReviews/productReviews/:id',
                 name: 'ProductReviewProductReviewDetail',
                 component: ProductReviewProductReviewDetail
+            },
+
+            {
+                path: '/products/products',
+                name: 'ProductProductManager',
+                component: ProductProductManager
+            },
+            {
+                path: '/products/products/:id',
+                name: 'ProductProductDetail',
+                component: ProductProductDetail
             },
 
 

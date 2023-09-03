@@ -20,7 +20,93 @@ public class PolicyHandler {
     @Autowired
     PetProfileRepository petProfileRepository;
 
+    @Autowired
+    RecommendedProductRepository recommendedProductRepository;
+
     @StreamListener(KafkaProcessor.INPUT)
     public void whatever(@Payload String eventString) {}
+
+    @Autowired
+    petshop.external.GetProfileService getProfileService;
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='AtNight12OClock'"
+    )
+    public void wheneverAtNight12OClock_Recommend(
+        @Payload AtNight12OClock atNight12OClock
+    ) {
+        AtNight12OClock event = atNight12OClock;
+        System.out.println(
+            "\n\n##### listener Recommend : " + atNight12OClock + "\n\n"
+        );
+
+        // REST Request Sample
+
+        // getProfileService.getGetProfile(/** mapping value needed */);
+
+        // Sample Logic //
+        RecommendedProduct.recommend(event);
+    }
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='PetProfileCreated'"
+    )
+    public void wheneverPetProfileCreated_Recommend(
+        @Payload PetProfileCreated petProfileCreated
+    ) {
+        PetProfileCreated event = petProfileCreated;
+        System.out.println(
+            "\n\n##### listener Recommend : " + petProfileCreated + "\n\n"
+        );
+
+        // REST Request Sample
+
+        // getProfileService.getGetProfile(/** mapping value needed */);
+
+        // Sample Logic //
+        RecommendedProduct.recommend(event);
+    }
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='ProfileChanged'"
+    )
+    public void wheneverProfileChanged_Recommend(
+        @Payload ProfileChanged profileChanged
+    ) {
+        ProfileChanged event = profileChanged;
+        System.out.println(
+            "\n\n##### listener Recommend : " + profileChanged + "\n\n"
+        );
+
+        // REST Request Sample
+
+        // getProfileService.getGetProfile(/** mapping value needed */);
+
+        // Sample Logic //
+        RecommendedProduct.recommend(event);
+    }
+
+    @StreamListener(
+        value = KafkaProcessor.INPUT,
+        condition = "headers['type']=='ProductCreated'"
+    )
+    public void wheneverProductCreated_Recommend(
+        @Payload ProductCreated productCreated
+    ) {
+        ProductCreated event = productCreated;
+        System.out.println(
+            "\n\n##### listener Recommend : " + productCreated + "\n\n"
+        );
+
+        // REST Request Sample
+
+        // getProfileService.getGetProfile(/** mapping value needed */);
+
+        // Sample Logic //
+        RecommendedProduct.recommend(event);
+    }
 }
 //>>> Clean Arch / Inbound Adaptor

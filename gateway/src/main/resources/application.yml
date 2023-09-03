@@ -12,23 +12,23 @@ spring:
         - id: pet-data-management
           uri: http://localhost:8082
           predicates:
-            - Path=/petProfiles/**, 
-        - id: product-recommendation
-          uri: http://localhost:8083
-          predicates:
-            - Path=/recommendedProducts/**, 
+            - Path=/petProfiles/**, /recommendedProducts/**, 
         - id: product-purchase
-          uri: http://localhost:8084
+          uri: http://localhost:8083
           predicates:
             - Path=/purchasedProducts/**, 
         - id: social-media-interaction
-          uri: http://localhost:8085
+          uri: http://localhost:8084
           predicates:
             - Path=/socialMediaPosts/**, 
         - id: product-review
-          uri: http://localhost:8086
+          uri: http://localhost:8085
           predicates:
             - Path=/productReviews/**, 
+        - id: product
+          uri: http://localhost:8086
+          predicates:
+            - Path=/products/**, 
         - id: frontend
           uri: http://localhost:8080
           predicates:
@@ -56,11 +56,7 @@ spring:
         - id: pet-data-management
           uri: http://petDataManagement:8080
           predicates:
-            - Path=/petProfiles/**, 
-        - id: product-recommendation
-          uri: http://productRecommendation:8080
-          predicates:
-            - Path=/recommendedProducts/**, 
+            - Path=/petProfiles/**, /recommendedProducts/**, 
         - id: product-purchase
           uri: http://productPurchase:8080
           predicates:
@@ -73,6 +69,10 @@ spring:
           uri: http://productReview:8080
           predicates:
             - Path=/productReviews/**, 
+        - id: product
+          uri: http://product:8080
+          predicates:
+            - Path=/products/**, 
         - id: frontend
           uri: http://frontend:8080
           predicates:

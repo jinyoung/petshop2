@@ -30,10 +30,10 @@ jobs:
       - name: Build Maven Projects
         run: |
           mvn clean package -f ./pet-data-management/pom.xml
-          mvn clean package -f ./product-recommendation/pom.xml
           mvn clean package -f ./product-purchase/pom.xml
           mvn clean package -f ./social-media-interaction/pom.xml
           mvn clean package -f ./product-review/pom.xml
+          mvn clean package -f ./product/pom.xml
 
       - name: Docker Build and push for PetDataManagement
         uses: docker/build-push-action@v4
@@ -44,16 +44,6 @@ jobs:
           tags: |
             ghcr.io/${{ github.repository }}/pet-data-management:latest
             ghcr.io/${{ github.repository }}/pet-data-management:${{ github.ref_name }}
-            
-      - name: Docker Build and push for ProductRecommendation
-        uses: docker/build-push-action@v4
-        with:
-          context: ./product-recommendation
-          platforms: linux/amd64,linux/arm64
-          push: true
-          tags: |
-            ghcr.io/${{ github.repository }}/product-recommendation:latest
-            ghcr.io/${{ github.repository }}/product-recommendation:${{ github.ref_name }}
             
       - name: Docker Build and push for ProductPurchase
         uses: docker/build-push-action@v4
@@ -84,4 +74,14 @@ jobs:
           tags: |
             ghcr.io/${{ github.repository }}/product-review:latest
             ghcr.io/${{ github.repository }}/product-review:${{ github.ref_name }}
+            
+      - name: Docker Build and push for Product
+        uses: docker/build-push-action@v4
+        with:
+          context: ./product
+          platforms: linux/amd64,linux/arm64
+          push: true
+          tags: |
+            ghcr.io/${{ github.repository }}/product:latest
+            ghcr.io/${{ github.repository }}/product:${{ github.ref_name }}
             

@@ -21,10 +21,10 @@ cd /bin
 See the README.md files inside the each microservices directory:
 
 - pet-data-management
-- product-recommendation
 - product-purchase
 - social-media-interaction
 - product-review
+- product
 
 
 ## Run API Gateway (Spring Gateway)
@@ -37,9 +37,6 @@ mvn spring-boot:run
 - pet-data-management
 ```
  http :8088/petProfiles id="id" age="age" size="size" gender="gender" preferences="preferences" needs="needs" allegies="allegies" petType="petType" 
-```
-- product-recommendation
-```
  http :8088/recommendedProducts productType="productType" size="size" age="age" gender="gender" preferences="preferences" photo="photo" petProfileId="petProfileId" 
 ```
 - product-purchase
@@ -53,6 +50,10 @@ mvn spring-boot:run
 - product-review
 ```
  http :8088/productReviews reviewId="reviewId" productId="productId" rating="rating" comment="comment" 
+```
+- product
+```
+ http :8088/products name="name" price="price" description="description" 
 ```
 
 

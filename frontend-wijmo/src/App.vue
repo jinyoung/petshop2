@@ -123,10 +123,6 @@ export default {
             { id: 'petDataManagement', title: '애견 데이터 관리',
                 items: [
                     { key: 'petProfiles', url: '/petProfiles', name: '애견 프로필' },
-                ]
-            },
-            { id: 'productRecommendation', title: '제품 추천',
-                items: [
                     { key: 'recommendedProducts', url: '/recommendedProducts', name: '추천 제품' },
                 ]
             },
@@ -143,6 +139,11 @@ export default {
             { id: 'productReview', title: '후기 및 평가',
                 items: [
                     { key: 'productReviews', url: '/productReviews', name: '제품 후기' },
+                ]
+            },
+            { id: 'product', title: 'Product',
+                items: [
+                    { key: 'products', url: '/products', name: 'Product' },
                 ]
             },
         ],
@@ -166,6 +167,10 @@ export default {
             {
                 text: "제품 후기",
                 link: "/productReviews",
+            },
+            {
+                text: "Product",
+                link: "/products",
             },
         ],
         activeMenu: null

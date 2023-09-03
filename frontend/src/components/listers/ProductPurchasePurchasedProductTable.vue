@@ -89,7 +89,7 @@
             this.newValue = {
                 'productId': '',
                 'productName': '',
-                'price': '',
+                'price': {},
                 'petProfileId': {},
             }
         },

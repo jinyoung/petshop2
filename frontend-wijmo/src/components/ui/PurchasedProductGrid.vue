@@ -40,7 +40,6 @@
             <wj-flex-grid-cell-template cellType="RowHeader" v-slot="cell">{{cell.row.index + 1}}</wj-flex-grid-cell-template>
             <wj-flex-grid-column binding="productId" header="ProductId" width="2*" :isReadOnly="true" align="center" />
             <wj-flex-grid-column binding="productName" header="ProductName" width="2*" :isReadOnly="true" align="center" />
-            <wj-flex-grid-column binding="price" header="Price" width="2*" :isReadOnly="true" align="center" />
             <wj-flex-grid-column binding="petProfileId" header="애견 프로필" width="2*" :isReadOnly="true" align="center">
                 <wj-flex-grid-cell-template cellType="Cell" v-slot="cell">   
                     <PetProfileId :editMode="editMode" v-model="cell.item.petProfileId"></PetProfileId>

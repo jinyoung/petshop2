@@ -111,7 +111,7 @@
             me.newValue = {
                 'productId': '',
                 'productName': '',
-                'price': '',
+                'price': {},
                 'petProfileId': {},
             }
         },

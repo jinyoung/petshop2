@@ -19,6 +19,7 @@ public class PurchasedProduct {
 
     private String productName;
 
+    @Embedded
     private Money price;
 
     @Embedded

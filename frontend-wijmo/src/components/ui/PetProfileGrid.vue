@@ -16,6 +16,7 @@
             </v-btn>
             <excel-export-button class="contrast-primary-text" :exportService="this.exportService" :getFlex="getFlex" />
         </div>
+        <GetProfile @search="search"></GetProfile>
 
 
         <!-- the grid -->
@@ -104,6 +105,7 @@
 </template>
 
 <script>
+import GetProfile from '../GetProfileView.vue';
 import PetProfile from '../PetProfile.vue'
 import BaseGrid from '../base-ui/BaseGrid'
 
@@ -111,6 +113,7 @@ export default {
     name: 'petProfileGrid',
     mixins:[BaseGrid],
     components:{
+        GetProfile,
         PetProfile,
     },
     data: () => ({

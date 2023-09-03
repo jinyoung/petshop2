@@ -7,6 +7,7 @@ import javax.persistence.*;
 import lombok.Data;
 import petshop.PetDataManagementApplication;
 import petshop.domain.PetProfileCreated;
+import petshop.domain.ProfileChanged;
 
 @Entity
 @Table(name = "PetProfile_table")
@@ -41,6 +42,12 @@ public class PetProfile {
 
     @PrePersist
     public void onPrePersist() {}
+
+    @PreUpdate
+    public void onPreUpdate() {
+        ProfileChanged profileChanged = new ProfileChanged(this);
+        profileChanged.publishAfterCommit();
+    }
 
     public static PetProfileRepository repository() {
         PetProfileRepository petProfileRepository = PetDataManagementApplication.applicationContext.getBean(
